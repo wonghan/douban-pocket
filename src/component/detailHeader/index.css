@@ -1,0 +1,25 @@
+.detail-header{
+    height: 8vh;
+    background: #318dff;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+.detail-header-back{
+    position: absolute;
+    left: 10px;
+    
+}
+.detail-header-title{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 60vw;
+    text-align: center;
+}

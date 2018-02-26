@@ -1,0 +1,37 @@
+.item{
+    list-style: none;
+    display: flex;
+    border: 1px solid #dfdfdf;
+    margin: 10px;
+}
+.item-img{
+	width: 100px;
+    height: 140px;
+    margin: 10px;
+}
+.item-detail{
+    height: 140px;
+}
+.item-detail p{
+    overflow: hidden;
+    white-space: nowrap;
+    width: 200px;
+    margin: 9px;
+    height: 20px;
+}
+.item-detail .tag{
+    color: #fff;
+    padding: 1px 2px;
+    margin: 0 2px;
+    font-size: 16px;
+    border-radius: 2px;
+}
+.item-detail .book-tag{
+    background: #f3b500;
+}
+.item-detail .movie-tag{
+    background: #ff4245;
+}
+.item-detail .music-tag{
+    background: #43a4ff;
+}

@@ -1,0 +1,115 @@
+.detail-content{
+    margin: 9vh 10px 0 10px;
+    
+}
+.detail-content-title{
+    font-size: 22px;
+    margin: 8px 0;
+}
+
+/**
+ *  books' css
+ */
+.detail-book-info{
+    position: relative;
+    padding: 10px 10px 10px 115px;
+    border-bottom: 1px solid #dfdfdf;
+    height: 160px;
+}
+.detail-book-img{
+    position: absolute;
+	width: 100px;
+	top: 10px;
+	left: 2px;
+	height: 150px;
+}
+.detail-book-info-text{
+    overflow: hidden;
+    white-space: nowrap;
+    width: 220px;
+}
+.detail-book-info-text .tag{
+    color: #fff;
+    background: #f3b500;
+    margin: 0 2px;
+    padding: 1px;
+    font-size: 14px;
+    border-radius: 2px;
+}
+.detail-book-text{
+    text-indent: 2em;
+    font-size: 16px;
+}
+
+/**
+ *  movies' css
+ */
+.detail-movie-img{
+    width: 80vw;
+    display: block;
+    margin: 0 auto 10px;
+}
+.detail-movie-info{
+    padding-top: 10px;
+    border-top: 1px solid #dfdfdf;
+}
+.detail-movie-info-text{
+    line-height: 24px;
+}
+.detail-movie-info-text .tag{
+    color: #fff;
+    background: #ff4245;
+    margin: 0 2px;
+    padding: 1px;
+    font-size: 14px;
+    border-radius: 2px;
+ }
+.detail-movie-casts{
+    display: flex;
+    flex-flow: row wrap;
+}
+.detail-movie-casts .cast{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.detail-movie-casts .cast-avatar{
+    width: 25vw;
+    border-radius: 50%;
+}
+
+/**
+ *  musics' css
+ */
+ .detail-music-info{
+    position: relative;
+    padding: 10px 10px 10px 115px;
+    border-bottom: 1px solid #dfdfdf;
+    height: 160px;
+}
+.detail-music-img{
+    position: absolute;
+	width: 100px;
+	top: 10px;
+	left: 2px;
+	height: 150px;
+}
+.detail-music-info-text{
+    overflow: hidden;
+    white-space: nowrap;
+    width: 220px;
+    line-height: 24px;
+}
+.detail-music-info-text .tag{
+    color: #fff;
+    background: #43a4ff;
+    margin: 0 2px;
+    padding: 1px;
+    font-size: 14px;
+    border-radius: 2px;
+}
+.detail-music-text{
+    text-indent: 2em;
+    font-size: 16px;
+}
