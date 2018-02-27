@@ -5,6 +5,10 @@
 
 ![](http://coding.imweb.io/img/p7/douban-demo.gif)
 
+## 使用
+- clone到本地后，使用`npm install`安装
+- 安装包后，使用`npm run dev`运行
+
 ## 具体要求
 
 1. 使用 `React` + `ES6` 来开发项目。完成下面的功能：
