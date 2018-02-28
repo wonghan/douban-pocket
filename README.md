@@ -3,7 +3,7 @@
 ## 项目说明
 本项目开发一个叫 ***口袋豆瓣*** 的应用，在豆瓣应用我们可以获取（或者搜索获取）到豆瓣的图书，电影，音乐列表以及相关的详情信息，具体效果图如下：
 
-![](http://coding.imweb.io/img/p7/douban-demo.gif)
+![](./demo/douban-demo.gif)
 
 ## 使用
 - clone到本地后，使用`npm install`安装
@@ -29,40 +29,40 @@
 
 图书列表：
 
-![](http://coding.imweb.io/img/p7/book-list.png)
+![](./demo/book-list.png)
 
 电影列表：
 
-![](http://coding.imweb.io/img/p7/movie-list.png)
+![](./demo/movie-list.png)
 
 音乐列表：
 
-![](http://coding.imweb.io/img/p7/music-list.png)
+![](./demo/music-list.png)
 
 ### 1.2 底部导航
 底部常驻导航栏，点击可切换不同类型，控制列表展示相应的内容。
 
-![](http://coding.imweb.io/img/p7/navbar.png)
+![](./demo/navbar.png)
 
 ### 1.3 顶部搜索
 顶部搜索框，输入内容点击搜索后，会在当前类别进行搜索出相关内容
 
-![](http://coding.imweb.io/img/p7/search.png)
+![](./demo/search.png)
 
 ### 1.4 内容详情
 点击列表中的每一项可以进入内容详情，点击左上角可返回
 
 图书详情：
 
-![](http://coding.imweb.io/img/p7/book-detail.png)
+![](./demo/book-detail.png)
 
 电影详情：
 
-![](http://coding.imweb.io/img/p7/movie-detail.png)
+![](./demo/movie-detail.png)
 
 音乐详情：
 
-![](http://coding.imweb.io/img/p7/music-detail.png)
+![](./demo/music-detail.png)
 
 
 ## 2. 通过JSONP 拉取豆瓣数据
