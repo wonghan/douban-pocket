@@ -7,7 +7,7 @@
 
 ## 使用
 - clone到本地后，使用`npm install`安装
-- 安装包后，使用`npm run dev`运行
+- 安装后，使用`npm run dev`运行
 
 ## 具体要求
 
