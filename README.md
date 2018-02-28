@@ -9,7 +9,8 @@
 - clone到本地后，使用`npm install`安装
 - 安装后，使用`npm run dev`运行
 
-## 具体要求
+
+## 具体实现
 
 1. 使用 `React` + `ES6` 来开发项目。完成下面的功能：
     - 列表页展示
@@ -96,7 +97,7 @@
 **注意：豆瓣 API 有权限和访问次数限制，单个 ip 限制每个小时 150 次，这个问题可查看[这里](https://developers.douban.com/wiki/?title=api_v2)的说明。因此建议在开发时把拉取到的数据存到本地，避免超过次数。**
 
 
-## Standard
+## 3. Standard
 为了更好的管理我们的代码，我们需要有相应的代码规范管理工具。这里需要大家学习使用 `Standard` 来管理 JavaScript 的代码规范。
 
 - [Standard 文档](https://standardjs.com/)
