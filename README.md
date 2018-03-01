@@ -5,6 +5,9 @@
 
 ![](./demo/douban-demo.gif)
 
+## 项目演示
+- https://wonghan.github.io/douban-pocket-demo/
+
 ## 使用
 - clone到本地后，使用`npm install`安装
 - 安装后，使用`npm run dev`运行
