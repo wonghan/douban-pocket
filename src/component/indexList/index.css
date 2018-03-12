@@ -2,3 +2,12 @@
     padding: 0;
     margin: 0 0 11vh;
 }
+#upDiv,#downDiv{
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+#upDiv{
+    top: -5vh;
+}

@@ -14,27 +14,29 @@ class List extends Component {
   componentDidMount () {
     const self = this
     let wrappers = this.props.ID || 'wrappers'
+    const upDiv = document.getElementById('upDiv')
+    const downDiv = document.getElementById('downDiv')
     this.jroll = new JRoll(`#${wrappers}`)
     this.jroll.refresh()
     this.jroll.on('scroll', function () {
       if (this.y >= (this.minScrollY + 50)) {
-        console.log('释放刷新')
+        upDiv.innerHTML = "释放刷新"
       }
     })
     this.jroll.on('touchEnd', function () {
       if (this.y >= (this.minScrollY + 50)) {
-        console.log('刷新完成')
+        upDiv.innerHTML = ""
         self.props.refresh()
       }
     })
     this.jroll.on('scroll', function () {
       if (this.y <= (this.maxScrollY - 50)) {
-        console.log('释放加载')
+        downDiv.innerHTML = "释放加载"
       }
     })
     this.jroll.on('touchEnd', function () {
       if (this.y <= (this.maxScrollY - 50)) {
-        console.log('加载完成')
+        downDiv.innerHTML = ""
         self.props.load()
       }
     })
@@ -58,13 +60,16 @@ class List extends Component {
   render () {
     const type = this.props.type
     const data = this.props.data
+    const clientHeight = document.documentElement.clientHeight; 
     return (
             // 设置滚动容器，其中id,height(滚动容器的高度)必须设置
-      <div id='wrappers' style={{height: 570}}>
+      <div id='wrappers' style={{height: clientHeight*0.85}}>
         <ul className='list'>
+          <div id='upDiv'></div>
           {data.map((item, index) => {
             return <Item item={item} key={index} type={type} pageChange={this.props.pageChange} />
           })}
+          <div id='downDiv'></div>
         </ul>
       </div>
         )
