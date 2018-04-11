@@ -1,12 +1,13 @@
 # 使用React开发口袋豆瓣
 
+## 项目演示
+- https://wonghan.github.io/douban-pocket-demo/
+
 ## 项目说明
 本项目开发一个叫 ***口袋豆瓣*** 的应用，在豆瓣应用我们可以获取（或者搜索获取）到豆瓣的图书，电影，音乐列表以及相关的详情信息，具体效果图如下：
 
 ![](./demo/douban-demo.gif)
 
-## 项目演示
-- https://wonghan.github.io/douban-pocket-demo/
 
 ## 使用
 - clone到本地后，使用`npm install`安装
