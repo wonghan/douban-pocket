@@ -24,7 +24,8 @@ class App extends Component {
       datum: '',
       books: books.books,
       movies: movies.subjects,
-      musics: musics.musics
+      musics: musics.musics,
+      isLoad: false
     }
   }
   fetchBooks (keyword, page) {
@@ -89,39 +90,49 @@ class App extends Component {
       case 'book':
         const books = this.state.books
         fetchBooks(this.state.keyword, this.state.pageCount + 1).then(data => {
+          this.setState({
+            books: books,
+            pageCount: this.state.pageCount + 1,
+            isLoad: true
+          })
           data.books && data.books.forEach((item, index) => {
             books.push(item)
           })
+        }).then(
           this.setState({
-            books: books,
-            pageCount: this.state.pageCount + 1
-          })
-        })
+          isLoad: false
+        }))
         break
       case 'movie':
         const movies = this.state.movies
         fetchMovies(this.state.keyword, this.state.pageCount + 1).then(data => {
-          data.subjects && data.subjects.forEach((item, index) => {
-            movies.push(item)
-          })
           this.setState({
             movies: movies,
-            pageCount: this.state.pageCount + 1
+            pageCount: this.state.pageCount + 1,
+            isLoad: true
           })
+          data.subjects && data.subjects.forEach((item, index) => {
+            movies.push(item)
+          }).then(
+            this.setState({
+            isLoad: false
+          }))
         })
         break
       case 'music':
         const musics = this.state.musics
         fetchMusics(this.state.keyword, this.state.pageCount + 1).then(data => {
-          data.musics && data.musics.forEach((item, index) => {
-            musics.push(item)
-          })
           this.setState({
             musics: musics,
             pageCount: this.state.pageCount + 1
           })
-        })
-                // console.log(musics);
+          data.musics && data.musics.forEach((item, index) => {
+            musics.push(item)
+          })
+        }).then(
+          this.setState({
+          isLoad: false
+        }))
         break
     }
   }
@@ -132,7 +143,7 @@ class App extends Component {
       <div className='app'>
         <div className={'index' + ' ' + !this.state.pageType}>
           <Search type={type} onClickSearch={this.onClickSearch.bind(this)} />
-          <List type={type} data={data} onSearch={this.state.onSearch} pageChange={this.pageChange.bind(this)} refresh={this.refresh.bind(this)} load={this.load.bind(this)} />
+          <List type={type} data={data} onSearch={this.state.onSearch} pageChange={this.pageChange.bind(this)} refresh={this.refresh.bind(this)} load={this.load.bind(this)} isLoad={this.state.isLoad}/>
           <Nav onClickNav={this.onClickNav.bind(this)} type={this.state.type} />
         </div>
         {this.state.pageType && <Detail datum={this.state.datum} type={this.state.type} pageChange={this.pageChange.bind(this)} />}

@@ -1,6 +1,11 @@
+#wrappers{
+    overflow: scroll;
+    position: relative;
+}
 .list{
     padding: 0;
-    margin: 0 0 11vh;
+    margin: 0 0 7vh;
+    position: absolute;
 }
 #upDiv,#downDiv{
     text-align: center;
