@@ -20,12 +20,13 @@ class App extends Component {
       pageType: false,
       onSearch: false,
       keyword: '',
-      pageCount: 0,
+      pageCountBook: 0,
+      pageCountMovie: 0,
+      pageCountMusic: 0,
       datum: '',
       books: books.books,
       movies: movies.subjects,
-      musics: musics.musics,
-      isLoad: false
+      musics: musics.musics
     }
   }
   fetchBooks (keyword, page) {
@@ -85,54 +86,56 @@ class App extends Component {
       case 'music': this.setState({musics: musics.musics}); break
     }
   }
-  load () {
+  load (callback,error) {
+    if(this.state.keyword===''){
+      error()
+      return
+    }
     switch (this.state.type) {
       case 'book':
         const books = this.state.books
-        fetchBooks(this.state.keyword, this.state.pageCount + 1).then(data => {
-          this.setState({
-            books: books,
-            pageCount: this.state.pageCount + 1,
-            isLoad: true
-          })
+        fetchBooks(this.state.keyword, this.state.pageCountBook + 1).then(data => {
           data.books && data.books.forEach((item, index) => {
             books.push(item)
           })
-        }).then(
           this.setState({
-          isLoad: false
-        }))
+            books: books,
+            pageCountBook: this.state.pageCountBook + 1
+          })
+          callback()
+        }).catch(ex=>{
+          error()
+        })
         break
       case 'movie':
         const movies = this.state.movies
-        fetchMovies(this.state.keyword, this.state.pageCount + 1).then(data => {
-          this.setState({
-            movies: movies,
-            pageCount: this.state.pageCount + 1,
-            isLoad: true
-          })
+        fetchMovies(this.state.keyword, this.state.pageCountMovie + 1).then(data => {
           data.subjects && data.subjects.forEach((item, index) => {
             movies.push(item)
-          }).then(
-            this.setState({
-            isLoad: false
-          }))
+          })
+          this.setState({
+            movies: movies,
+            pageCountMovie: this.state.pageCountMovie + 1
+          })
+          callback()
+        }).catch(ex=>{
+          error()
         })
         break
       case 'music':
         const musics = this.state.musics
-        fetchMusics(this.state.keyword, this.state.pageCount + 1).then(data => {
-          this.setState({
-            musics: musics,
-            pageCount: this.state.pageCount + 1
-          })
+        fetchMusics(this.state.keyword, this.state.pageCountMusic + 1).then(data => {
           data.musics && data.musics.forEach((item, index) => {
             musics.push(item)
           })
-        }).then(
           this.setState({
-          isLoad: false
-        }))
+            musics: musics,
+            pageCountMusic: this.state.pageCountMusic + 1
+          })
+          callback()
+        }).catch(ex=>{
+          error()
+        })
         break
     }
   }
@@ -143,7 +146,7 @@ class App extends Component {
       <div className='app'>
         <div className={'index' + ' ' + !this.state.pageType}>
           <Search type={type} onClickSearch={this.onClickSearch.bind(this)} />
-          <List type={type} data={data} onSearch={this.state.onSearch} pageChange={this.pageChange.bind(this)} refresh={this.refresh.bind(this)} load={this.load.bind(this)} isLoad={this.state.isLoad}/>
+          <List type={type} data={data} onSearch={this.state.onSearch} pageChange={this.pageChange.bind(this)} refresh={this.refresh.bind(this)} load={this.load.bind(this)}/>
           <Nav onClickNav={this.onClickNav.bind(this)} type={this.state.type} />
         </div>
         {this.state.pageType && <Detail datum={this.state.datum} type={this.state.type} pageChange={this.pageChange.bind(this)} />}
