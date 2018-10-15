@@ -29,7 +29,7 @@
 
 ## 1. 具体功能介绍
 ### 1.1 列表展示
-共有三种不同类型的列表（图示-电影-音乐），每一个列表需要展示至少一页的内容。
+共有三种不同类型的列表（图示-电影-音乐），每一个列表展示至少一页的内容。
 
 
 图书列表：
@@ -71,20 +71,20 @@
 
 
 ## 2. 通过JSONP 拉取豆瓣数据
-使用豆瓣 API 接口，涉及到跨域问题，可通过 `JSONP` 方式解决。建议使用下面的 JSONP 拉取组件（React 体系中不建议 jQuery）：
+使用豆瓣 API 接口，涉及到跨域问题，通过 `JSONP` 方式解决。使用下面的 JSONP 拉取组件：
 - [fetch-jsonp](https://github.com/camsong/fetch-jsonp)
 
 
 ### 豆瓣接口说明
-[豆瓣开发者网站](https://developers.douban.com/wiki/?title=guide)有许多接口的说明文档，需要根据看豆瓣文档中接口的数据格式说明来进行开发页面。本应用涉及的接口文档如下：
+[豆瓣开发者网站](https://developers.douban.com/wiki/?title=guide)有许多接口的说明文档，根据豆瓣文档中接口的数据格式说明来进行开发页面。本应用涉及的接口文档如下：
 
 ### 图书相关
-- 拉取图书列表和搜索图书列表可使用下面的接口:
+- 拉取图书列表和搜索图书列表使用下面的接口:
 
   https://developers.douban.com/wiki/?title=book_v2#get_book_search
 
 ### 音乐相关
-- 拉取音乐列表和搜索音乐列表可使用下面的接口:
+- 拉取音乐列表和搜索音乐列表使用下面的接口:
 
   https://developers.douban.com/wiki/?title=music_v2#get_music_search
 
@@ -98,11 +98,11 @@
   https://developers.douban.com/wiki/?title=movie_v2#search
 
 
-**注意：豆瓣 API 有权限和访问次数限制，单个 ip 限制每个小时 150 次，这个问题可查看[这里](https://developers.douban.com/wiki/?title=api_v2)的说明。因此建议在开发时把拉取到的数据存到本地，避免超过次数。**
+**注意：豆瓣 API 有权限和访问次数限制，单个 ip 限制每个小时 150 次，这个问题可查看[这里](https://developers.douban.com/wiki/?title=api_v2)的说明。**
 
 
 ## 3. Standard
-为了更好的管理我们的代码，我们需要有相应的代码规范管理工具。这里需要大家学习使用 `Standard` 来管理 JavaScript 的代码规范。
+为了更好的管理我们的代码，使用相应的代码规范管理工具 —— `Standard` 来管理 JavaScript 的代码规范。
 
 - [Standard 文档](https://standardjs.com/)
 - [Standard - github 仓库](https://github.com/standard/standard)
